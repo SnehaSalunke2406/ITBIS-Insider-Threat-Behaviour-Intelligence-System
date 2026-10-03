@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ITBIS — Insider Threat Behaviour Intelligence System">
+  <title>ITBIS • Insider Threat Behaviour Intelligence System</title>
+  <link rel="stylesheet" href="/static/styles.css?v=20261002b">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div id="login" class="screen">
+    <div class="login-shell">
+      <div class="login-card">
+        <div class="brand-lockup">
+          <div class="brand-mark">IT</div>
+          <div><div class="brand">ITBIS</div><small>SECURITY OPERATIONS</small></div>
+        </div>
+        <div class="security-badge"><span class="pulse-dot"></span> Protected monitoring console</div>
+        <h1>Insider Threat Behaviour Intelligence System</h1>
+        <p class="login-subtitle">Detect behaviour drift, investigate anomalies, and monitor employee risk from one security operations console.</p>
+        <form id="loginForm" autocomplete="on">
+          <label class="field-label" for="email">Work email</label>
+          <input id="email" type="email" value="admin@ueba.com" autocomplete="username" required>
+          <label class="field-label" for="password">Password</label>
+          <input id="password" type="password" value="admin123" autocomplete="current-password" required>
+          <button class="login-btn" type="submit"><span>Sign in to console</span><span class="arrow">→</span></button>
+          <div class="login-security-row"><span>● Session protected</span><span>● Audit logging</span><span>● JWT authentication</span></div>
+          <div id="loginMsg" role="alert"></div>
+        </form>
+      </div>
+      <div class="login-side">
+        <div class="mini-panel"><span class="mini-kicker">THREAT INTELLIGENCE</span><strong>Behaviour → Anomaly → Risk</strong><p>Learn a normal employee pattern, score new activity against it, and surface explainable signals for investigators.</p></div>
+        <div class="mini-stat-grid">
+          <div><span>01</span><b>Baseline</b><small>Learn normal patterns</small></div>
+          <div><span>02</span><b>Detect</b><small>Score deviations</small></div>
+          <div><span>03</span><b>Respond</b><small>Alert investigators</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="app" class="hidden">
+    <aside>
+      <div class="side-brand">
+        <div class="brand-lockup compact"><div class="brand-mark">IT</div><div><span>ITBIS</span><small>Security Operations</small></div></div>
+      </div>
+      <div class="nav-label">MONITORING</div>
+      <button class="nav active" data-page="dashboard"><span class="nav-icon">⌂</span><span>Dashboard</span></button>
+      <button class="nav" data-page="employees"><span class="nav-icon">◉</span><span>Employees</span></button>
+      <button class="nav" data-page="alerts"><span class="nav-icon">!</span><span>Alerts</span><span class="nav-badge" id="navAlertBadge">0</span></button>
+      <button class="nav" data-page="incidents"><span class="nav-icon">◆</span><span>Incidents</span></button>
+      <div class="nav-label">INTELLIGENCE</div>
+      <button class="nav" data-page="intelligence"><span class="nav-icon">◎</span><span>Behaviour Intelligence</span></button>
+      <button class="nav" data-page="activity"><span class="nav-icon">≈</span><span>Activity Logs</span></button>
+      <button class="nav" data-page="reports"><span class="nav-icon">▥</span><span>Risk Reports</span></button>
+      <div class="nav-label">GOVERNANCE</div>
+      <button class="nav" data-page="audit"><span class="nav-icon">✓</span><span>Audit Trail</span></button>
+      <div class="side-footer">
+        <div class="side-status"><span class="pulse-dot"></span><div><b>Console secure</b><small>Local protected session</small></div></div>
+        <span id="userRole"></span>
+        <button id="logout">↪ Sign out</button>
+      </div>
+    </aside>
+    <main>
+      <header>
+        <div>
+          <div class="eyebrow">INSIDER THREAT MONITORING • LIVE CONSOLE</div>
+          <h2 id="pageTitle">Dashboard</h2>
+        </div>
+        <div class="header-right">
+          <div class="live-time" id="liveTime">--:--:--</div>
+          <div class="pill" id="dbStatus"><span class="status-dot"></span>checking...</div>
+        </div>
+      </header>
+      <section id="content"></section>
+    </main>
+  </div>
+  <script src="/static/app.js?v=20261002b"></script>
+</body>
+</html>
